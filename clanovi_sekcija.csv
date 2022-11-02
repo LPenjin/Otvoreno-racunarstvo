@@ -2,10 +2,10 @@ ime,sifra_plave,datumuclanjenja,imeprezime,imanarancastu,pocasnoclanstvo,clanstv
 Bike sekcija        ,AA-20,2022-10-01,Pero Peric                                                                                          ,f,f,2023-10-01,18:00     ,Tech prostor        ,AA-35
 Bike sekcija        ,AA-35,2022-10-01,Ivan Ivic                                                                                           ,f,f,2023-10-01,18:00     ,Tech prostor        ,AA-35
 Disko sekcija       ,AA-24,2022-10-01,Toni Tonic                                                                                          ,f,f,2023-10-01,18:00     ,Kabina              ,AA-24
-Dramska sekcija     ,AA-42,2022-10-01,Nikola Nikolic                                                                                      ,t,f,2023-10-01,18:00     ,Kabina              ,AA-42
+Dramska sekcija     ,AA-42,2022-10-01,Nikola Nikolic                                                                                      ,t,f,2023-10-01,18:00     ,Ispod stepenica     ,AA-42
 Foto sekcija        ,AA-50,2022-10-01,Tamara Tamaric                                                                                      ,t,f,2023-10-01,18:00     ,Foto prostorija     ,AA-50
-Glazbena sekcija    ,AA-48,2022-10-01,Silvester Stalone                                                                                   ,t,f,2023-10-01,18:00     ,Foto prostorija     ,AA-48
-Planinarska sekcija ,AA-48,2022-10-01,Silvester Stalone                                                                                   ,t,f,2023-10-01,18:00     ,Foto prostorija     ,AA-48
+Glazbena sekcija    ,AA-48,2022-10-01,Silvester Stalone                                                                                   ,t,f,2023-10-01,18:00     ,Glazbena prostorija ,AA-48
+Planinarska sekcija ,AA-48,2022-10-01,Silvester Stalone                                                                                   ,t,f,2023-10-01,18:00     ,Tech prostorija     ,AA-46
 Comp sekcija        ,AA-41,2022-10-01,Josip Josipovic                                                                                     ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
 Video sekcija       ,AA-44,2022-10-01,Patrik Patrikic                                                                                     ,t,f,2023-10-01,18:00     ,Video Prostorija    ,AA-44
 Tech sekcija        ,AA-43,2022-10-01,Marin Marinic                                                                                       ,t,f,2023-10-01,18:00     ,Tech Prostorija     ,AA-43
@@ -24,10 +24,11 @@ Video sekcija       ,AA-33,2022-10-01,Antonio Antonic                           
 Bike sekcija        ,AA-36,2022-10-01,Disko Čiča                                                                                          ,f,f,2023-10-01,18:00     ,Tech prostor        ,AA-35
 Bike sekcija        ,AA-37,2022-10-01,Sef Sefic                                                                                           ,t,f,2023-10-01,18:00     ,Tech prostor        ,AA-35
 Bike sekcija        ,AA-38,2022-10-01,Stevo Blagajnik                                                                                     ,t,f,2023-10-01,18:00     ,Tech prostor        ,AA-35
-Dramska sekcija     ,AA-39,2022-10-01,Marko Tajnik                                                                                        ,t,f,2023-10-01,18:00     ,Kabina              ,AA-42
+Dramska sekcija     ,AA-39,2022-10-01,Marko Tajnik                                                                                        ,t,f,2023-10-01,18:00     ,Ispod stepenica     ,AA-42
 Comp sekcija        ,AA-40,2022-10-01,Marko Markic                                                                                        ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
 Comp sekcija        ,AA-42,2022-10-01,Nikola Nikolic                                                                                      ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
 Comp sekcija        ,AA-45,2022-10-01,Juraj Juric                                                                                         ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
 Comp sekcija        ,AA-46,2022-10-01,Helena Helenic                                                                                      ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
 Comp sekcija        ,AA-47,2022-10-01,Arnold Schwarzenger                                                                                 ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
 Comp sekcija        ,AA-49,2022-10-01,Paolo Paolic                                                                                        ,t,f,2023-10-01,18:00     ,Comp Prostorija     ,AA-41
+Planinarska sekcija ,AA-46,2022-10-01,Helena Helenic                                                                                      ,t,f,2023-10-01,18:00     ,Tech prostorija     ,AA-46

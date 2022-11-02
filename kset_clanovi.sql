@@ -143,13 +143,13 @@ Tajnik              	AA-39	2022
 COPY public.sekcija (ime, pocetaksastanka, prostor, sef) FROM stdin;
 Bike sekcija        	18:00     	Tech prostor        	AA-35
 Disko sekcija       	18:00     	Kabina              	AA-24
-Dramska sekcija     	18:00     	Kabina              	AA-42
 Foto sekcija        	18:00     	Foto prostorija     	AA-50
-Glazbena sekcija    	18:00     	Foto prostorija     	AA-48
-Planinarska sekcija 	18:00     	Foto prostorija     	AA-48
 Comp sekcija        	18:00     	Comp Prostorija     	AA-41
 Video sekcija       	18:00     	Video Prostorija    	AA-44
 Tech sekcija        	18:00     	Tech Prostorija     	AA-43
+Glazbena sekcija    	18:00     	Glazbena prostorija 	AA-48
+Planinarska sekcija 	18:00     	Tech prostorija     	AA-46
+Dramska sekcija     	18:00     	Ispod stepenica     	AA-42
 \.
 
 
@@ -190,6 +190,7 @@ AA-45	Comp sekcija
 AA-46	Comp sekcija        
 AA-47	Comp sekcija        
 AA-49	Comp sekcija        
+AA-46	Planinarska sekcija 
 \.
 
 
