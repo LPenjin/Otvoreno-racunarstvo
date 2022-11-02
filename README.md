@@ -4,15 +4,15 @@
 
 ## Language
 
-Hrvatski
+Croatian
 
 ## Description
 
-Ovaj skup podataka sadrži nestvarne KSET članove i sekcije kojima pripadaju.
+This data set contains fictional KSET members and the groups they are part of.
 
 ## Credits
 
-Autor: Luka Penjin
+Author: Luka Penjin
 
 ##License
 
