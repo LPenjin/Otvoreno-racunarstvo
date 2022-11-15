@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Sifra Plave</th>
+        <th>Narancasti</th>
+        <th>Pocasni</th>
+        <th>Datum rodenja</th>
+        <th>Kandidat za pocasno</th>
+        <th>Studentska potvrda</th>
+        <th>Datum uclanjenja</th>
+        <th>Istek clanstva</th>
+        <th>Ime sekcija</th>
+        <th>Prostor sekcija</th>
+        <th>Pocetak sastanka</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    $(document).ready(function () {
+      $('#data').DataTable({
+        ajax: '/api/data',
+        columns: [
+          {data: 'imeclan'},
+          {data: 'prezimeclan'},
+          {data: 'sifraplave'},
+          {data: 'imanarancastu'},
+          {data: 'pocasnoclanstvo'},
+          {data: 'datrod'},
+          {data: 'kandpoc'},
+          {data: 'predpotstud'},
+          {data: 'datumuclanjenja'},
+          {data: 'clanstvovrijedido'},
+          {data: 'ime'},
+          {data: 'prostor'},
+          {data: 'pocetaksastanka'}
+        ],
+      });
+    });
+  </script>
+{% endblock %}

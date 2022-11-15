@@ -1,0 +1,185 @@
+{
+    "$schema": "https://json-schema.org/kset/2022/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Clan",
+    "required": [
+        "imeclan",
+        "prezimeclan",
+        "sifraplave",
+        "datumuclanjenja",
+        "clanstvovrijedido",
+        "imanarancastu",
+        "pocasnoclanstvo",
+        "datrod",
+        "kandpoc",
+        "predpotstud",
+        "sekcije"
+    ],
+    "properties": {
+        "imeclan": {
+            "type": "string",
+            "default": "",
+            "title": "The imeclan Schema",
+            "examples": [
+                "Luka"
+            ]
+        },
+        "prezimeclan": {
+            "type": "string",
+            "default": "",
+            "title": "The prezimeclan Schema",
+            "examples": [
+                "Lukic"
+            ]
+        },
+        "sifraplave": {
+            "type": "string",
+            "default": "",
+            "title": "The sifraplave Schema",
+            "examples": [
+                "AA-23"
+            ]
+        },
+        "datumuclanjenja": {
+            "type": "string",
+            "default": "",
+            "title": "The datumuclanjenja Schema",
+            "examples": [
+                "2022-10-01"
+            ]
+        },
+        "clanstvovrijedido": {
+            "type": "string",
+            "default": "",
+            "title": "The clanstvovrijedido Schema",
+            "examples": [
+                "2023-10-01"
+            ]
+        },
+        "imanarancastu": {
+            "type": "boolean",
+            "default": false,
+            "title": "The imanarancastu Schema",
+            "examples": [
+                false
+            ]
+        },
+        "pocasnoclanstvo": {
+            "type": "boolean",
+            "default": false,
+            "title": "The pocasnoclanstvo Schema",
+            "examples": [
+                false
+            ]
+        },
+        "datrod": {
+            "type": "string",
+            "default": "",
+            "title": "The datrod Schema",
+            "examples": [
+                "2001-10-01"
+            ]
+        },
+        "kandpoc": {
+            "type": "boolean",
+            "default": false,
+            "title": "The kandpoc Schema",
+            "examples": [
+                false
+            ]
+        },
+        "predpotstud": {
+            "type": "boolean",
+            "default": false,
+            "title": "The predpotstud Schema",
+            "examples": [
+                true
+            ]
+        },
+        "sekcije": {
+            "type": "array",
+            "default": [],
+            "title": "The sekcije Schema",
+            "items": {
+                "type": "object",
+                "default": {},
+                "title": "A Schema",
+                "required": [
+                    "imesekcije",
+                    "sef",
+                    "pocetaksastanka",
+                    "prostor"
+                ],
+                "properties": {
+                    "imesekcije": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The imesekcije Schema",
+                        "examples": [
+                            "Disko sekcija"
+                        ]
+                    },
+                    "sef": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The sef Schema",
+                        "examples": [
+                            "AA-24"
+                        ]
+                    },
+                    "pocetaksastanka": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The pocetaksastanka Schema",
+                        "examples": [
+                            "18:00"
+                        ]
+                    },
+                    "prostor": {
+                        "type": "string",
+                        "default": "",
+                        "title": "The prostor Schema",
+                        "examples": [
+                            "Kabina"
+                        ]
+                    }
+                },
+                "examples": [{
+                    "imesekcije": "Disko sekcija",
+                    "sef": "AA-24",
+                    "pocetaksastanka": "18:00",
+                    "prostor": "Kabina"
+                }]
+            },
+            "examples": [
+                [{
+                    "imesekcije": "Disko sekcija",
+                    "sef": "AA-24",
+                    "pocetaksastanka": "18:00",
+                    "prostor": "Kabina"
+                }]
+            ]
+        }
+    },
+    "examples": [{
+        "imeclan": "Luka",
+        "prezimeclan": "Lukic",
+        "sifraplave": "AA-23",
+        "datumuclanjenja": "2022-10-01",
+        "clanstvovrijedido": "2023-10-01",
+        "imanarancastu": false,
+        "pocasnoclanstvo": false,
+        "datrod": "2001-10-01",
+        "kandpoc": false,
+        "predpotstud": true,
+        "sekcije": [{
+            "imesekcije": "Disko sekcija",
+            "sef": "AA-24",
+            "pocetaksastanka": "18:00",
+            "prostor": "Kabina"
+        }]
+    }],
+    "$description": "Clan kseta, njegovi podaci i sekcija kojoj pripada"
+}

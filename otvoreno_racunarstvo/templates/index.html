@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Index</h1>
+<form action="function">
+    <label for="filter">Unesi filter</label>
+    <input type="text", id="filter", name="filter">
+    <label for="stavka">Odaberite polje za pretrazivanje</label>
+    <select name="stavka" id="stavka">
+    <option value="imeclan">Ime clana</option>
+    <option value="prezimeclan">Prezime clana</option>
+    <option value="Ime sekcije">Ime sekcije</option>
+    <option value="Broj plave">Broj plave</option>
+</select>
+</form>
+
+<a href="/download_csv/">Download_csv</a>
+<a href="/download_json/">Download_json</a>
+<a href="/datatable">Datatable</a>
+{% endblock content %}
+{% block scripts %}
+{% endblock scripts%}
