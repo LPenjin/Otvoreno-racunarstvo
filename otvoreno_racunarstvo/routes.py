@@ -27,8 +27,8 @@ def to_dict(clan):
 def index():
     return render_template('index.html', title="index")
 
-@app.route('/download_csv/<filter>')
-def download(filter):
+@app.route('/download_csv')
+def download():
     return send_file('../clanovi_sekcija.csv', as_attachment=True)
 
 @app.route('/datatable')
@@ -41,6 +41,6 @@ def data():
     data = {"data": [to_dict(clan) for clan in clanovi]}
     return data
 
-@app.route('/download_json/<filter>')
-def download_json(filter):
+@app.route('/download_json')
+def download_json():
     return send_file('../clanovi_sekcija.json')
