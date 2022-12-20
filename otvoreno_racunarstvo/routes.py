@@ -55,53 +55,57 @@ def data():
 def download_json():
     return send_file('../clanovi_sekcija.json')
 
-@app.route('/download/clanovi', methods=['GET'])
+@app.route('/clan/get', methods=['GET'])
 def get_clanovi():
     clanovi = db.engine.execute(statement)
     data = {"data": [to_dict(clan) for clan in clanovi]}
-    return jsonify(data)
+    return jsonify(data), 200
 
-@app.route('/download/clanovi/search', methods=['GET'])
+@app.route('/clan/getById', methods=['GET'])
 def get_clanovi_po_plavoj():
     args = request.args
     if id:=args.get('id'):
         clanovi = db.engine.execute(statement_id + id + "\'")
         data = {"data": [to_dict(clan) for clan in clanovi]}
-        return jsonify(data)
+        if not data:
+            return jsonify({"error": "Clan not found"}), 404
+        return jsonify(data), 200
     else:
-        return jsonify({"error" : "No id found"}), 400
+        return jsonify({"error" : "Invalid Sifra Plave"}), 400
 
-@app.route('/download/sekcije', methods=['GET'])
+@app.route('/sekcija/get', methods=['GET'])
 def get_sekcije():
     sekcije = db.engine.execute("select * from sekcija")
     data = {"data": [to_dict_sekcija(sekcija) for sekcija in sekcije]}
-    return jsonify(data)
+    return jsonify(data), 200
 
-@app.route('/download/sefovi', methods=['GET'])
+@app.route('/clan/getSef', methods=['GET'])
 def get_sefovi():
     sefovi = db.engine.execute(statement + " where sifraplave = sekcija.sef")
     data = {"data": [to_dict(sef) for sef in sefovi]}
-    return jsonify(data)
+    return jsonify(data), 200
 
-@app.route('/download/sekcije/search', methods=['GET'])
+@app.route('/sekcija/getByProstor', methods=['GET'])
 def get_sekcije_by_prostor():
     args = request.args
     if prostor := args.get('prostor'):
         sekcije = db.engine.execute(f"select * from sekcija where prostor like '{prostor}'")
         data = {"data": [to_dict_sekcija(sekcija) for sekcija in sekcije]}
-        return jsonify(data)
+        if not data:
+            return jsonify({"error": "Clan not found"}), 404
+        return jsonify(data), 200
     else:
-        return jsonify({"error": "No id found"}), 400
+        return jsonify({"error": "Prostor no supplied"}), 400
 
-@app.route('/get/openapi', methods=['GET'])
+@app.route('/openapi/get', methods=['GET'])
 def get_openapi():
     root = os.path.realpath(os.path.dirname(__file__))
     json_url = os.path.join(root, "static", "openAPI.json")
     print(json_url)
-    data = json.load(open(r'C:\Users\lpenj\Desktop\Very important stuff\Fakultetlaz\7. semestar\Otvoreno racunarstvo\Otvoreno-racunarstvo\otvoreno_racunarstvo\openAPI.json'))
+    data = json.load(open(r'C:\Users\lpenj\Desktop\Very important stuff\Fakultetlaz\7. semestar\Otvoreno racunarstvo\Otvoreno-racunarstvo\otvoreno_racunarstvo\openapi.json'))
     return make_response(data, 200)
 
-@app.route('/put/clan', methods=['POST'])
+@app.route('/clan/post', methods=['POST'])
 def post_clan():
     datumuclanjenja = request.form['datumuclanjenja']
     sifraplave = request.form['sifraplave']
@@ -119,7 +123,7 @@ def post_clan():
     return make_response("Success", 200)
 
 
-@app.route('/update/clan', methods=['PUT'])
+@app.route('/clan/put', methods=['PUT'])
 def update_clan():
     datumuclanjenja = request.form['datumuclanjenja']
     sifraplave = request.form['sifraplave']
@@ -139,7 +143,7 @@ def update_clan():
     return make_response("Success", 200)
 
 
-@app.route('/delete/clan', methods=['DELETE'])
+@app.route('/clan/delete', methods=['DELETE'])
 def delete_clan():
     sifraplave = request.form['sifraplave']
     db.engine.execute(f"delete from clan where sifraplave=\'{sifraplave}\'")

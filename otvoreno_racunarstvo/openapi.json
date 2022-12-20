@@ -1,0 +1,331 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Kset clanovi - OpenAPI 3.0",
+    "description": "This data set contains fictional KSET members and the groups they are part of. Contains names, ID, start date of memberships and the end date. \n\nEvery row also describes if a member has an orange membership. Without orange membership a member cannot be in two groups at once. Also, every member must be a college student and must have certificate of study. Exception to that rule have so-called \"red\" members who have done so much for the Club that KSET actually owes them for all the time they have invested. End date of their membership is always tommorow. People who have just graduated cannot get the certificate of study, but they can extend their membership for another year if they are nominated for a red member. \n\nClub also has 3 executive members. They manage higher level functions.\n\nThis is a simple API that enables API calls for getting and setting data.\nSome useful links:\n  - [Kset Web Page](https://www.kset.org)",
+    "license": {
+      "name": "CC0 1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "version": "3.0.0"
+  },
+  "paths": {
+    "/clan/put": {
+      "put": {
+        "tags": [
+          "clan"
+        ],
+        "summary": "Update an existing clan",
+        "description": "Update an existing pet by Sifra Plave",
+        "operationId": "updateClan",
+        "requestBody": {
+          "description": "Update an existent Clan",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Clan"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Clan"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Clan"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clan"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clan"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clan/post": {
+      "post": {
+        "tags": [
+          "clan"
+        ],
+        "summary": "Add a new clan",
+        "description": "Add a new clan",
+        "operationId": "addClan",
+        "requestBody": {
+          "description": "Create a new clan",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pet"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/Pet"
+              }
+            },
+            "application/x-www-form-urlencoded": {
+              "schema": {
+                "$ref": "#/components/schemas/Pet"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clan/get": {
+      "get": {
+        "tags": [
+          "clan"
+        ],
+        "summary": "Gets all from table clan",
+        "description": "Returns list of all clan from table clan in database",
+        "operationId": "getClan",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Clan"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Clan"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clan/getById?sifraplave={sifraplave}": {
+      "get": {
+        "tags": [
+          "clan"
+        ],
+        "summary": "Finds clan by Sifra Plave",
+        "description": "Returns a clan by their Sifra Plave. Can return multiple results if clan in vise sekcija.",
+        "operationId": "findClanById",
+        "parameters": [
+          {
+            "name": "tags",
+            "in": "query",
+            "description": "Tags to filter by",
+            "required": false,
+            "explode": true,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/clan"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/clan"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Sifra plave"
+          },
+          "404": {
+            "description": "Clan not found"
+          }
+        }
+      }
+    },
+    "/clan/getSef": {
+      "get": {
+        "tags": [
+          "clan"
+        ],
+        "summary": "Finds all section bosses",
+        "description": "Must return 9 results. One boss for eacg section",
+        "operationId": "getSectionBosses",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/clan"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/clan"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clan/delete?sifraplave={sifraplave}": {
+      "delete": {
+        "tags": [
+          "clan"
+        ],
+        "summary": "Deletes a member",
+        "description": "delete a member",
+        "operationId": "deleteMember",
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "description": "",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sifraplave",
+            "in": "path",
+            "description": "Sifra plave to delete",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/sekcija/get": {
+      "get": {
+        "tags": [
+          "sekcija"
+        ],
+        "summary": "Returns all nine sections",
+        "description": "Returns all nine sections and their details",
+        "operationId": "getSections",
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sekcija/getByProstor?prostor={prostor}": {
+      "get": {
+        "tags": [
+          "sekcija"
+        ],
+        "summary": "Find section by its room",
+        "description": "Returns all sections located in a certain room.",
+        "operationId": "getOrderById",
+        "parameters": [
+          {
+            "name": "prostor",
+            "in": "path",
+            "description": "ID of order that needs to be fetched",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/sekcija"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/sekcija"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Prostor not supplied"
+          },
+          "404": {
+            "description": "Sekcija by prostor not found"
+          }
+        }
+      }
+    }
+  }
+}
