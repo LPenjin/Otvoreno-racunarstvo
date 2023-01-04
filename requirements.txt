@@ -2,3 +2,6 @@ Flask
 Flask-SQLAlchemy
 SQLAlchemy
 psycopg2
+python-dotenv
+authlib
+requests

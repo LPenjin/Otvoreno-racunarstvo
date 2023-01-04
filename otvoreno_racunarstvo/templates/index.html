@@ -1,6 +1,41 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1>Index</h1>
+{% if session %}
+        <h1>Welcome {{session.userinfo.name}}!</h1>
+        <p><a href="/logout">Logout</a></p>
+    {% else %}
+        <h1>Welcome Guest</h1>
+        <p><a href="/login">Login</a></p>
+    {% endif %}
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org/",
+        "@type": "person",
+        "givenName": "{{ksetovac["imeclan"]}}",
+        "familyName": "{{ksetovac["prezimeclan"]}}",
+        "birthDate": "{{ksetovac["datrod"]}}",
+        "identifier": "{{ksetovac["sifraplave"]}}",
+        "memberOf": {
+        "@type":  "organization",
+        "name": "{{ksetovac["ime_sekcije"]}}",
+        "location": "{{ksetovac["prostor"]}}"}
+    }
+</script>
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org/",
+    "@type": "organization",
+    "name": "{{sekcija["ime_sekcije"]}}",
+    "location": "{{sekcija["prostor"]}}",
+    "owns": {"@type":"person",
+        "givenName": "{{sekcija["imeclan"]}}",
+        "familyName": "{{sekcija["prezimeclan"]}}",
+        "birthDate": "{{sekcija["datrod"]}}",
+        "identifier": "{{sekcija["sifraplave"]}}"
+    }
+    }
+</script>
 <form action="function">
     <label for="filter">Unesi filter</label>
     <input type="text", id="filter", name="filter">
@@ -12,10 +47,10 @@
     <option value="Broj plave">Broj plave</option>
 </select>
 </form>
-
 <a href="/download_csv">Download_csv</a>
 <a href="/download_json">Download_json</a>
 <a href="/datatable">Datatable</a>
+
 {% endblock content %}
 {% block scripts %}
 {% endblock scripts%}
